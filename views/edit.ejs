@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Your Message</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        transition:0.3s ease;
+        overflow:hidden;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url(https://i.redd.it/3jfjc53fsyb61.jpg);
+        background-size: cover;
+        color:#fff;
+    }
+    .edit_msg{
+        color:#fff;
+        font-weight: 800;
+        font-size: 2rem;
+        margin:1.5rem;
+
+    }
+    form{
+        border-radius:0.2rem;
+        padding:0 2rem;
+        width:70%;
+        color:#000;
+        background:linear-gradient(90deg,#25d366,#fff);
+
+    }
+    b{
+        margin:0 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    p{
+        margin:0.5rem 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    form textarea{
+        max-width:80%;
+        padding:1rem;
+        font-size: 1rem;
+        margin-left:5rem;
+        margin-top:1rem;
+        border:none;
+        outline: none;
+        border-radius:1.5rem;
+    }
+    .edit_btn{
+        margin:2rem 90% 1rem;
+        background:#25d366;
+        color:#000;
+        padding:0.5rem 1rem;
+        border:none;
+        cursor:pointer;
+        font-weight: 700;
+        transition: background 0.3s ease-in-out;
+        border-radius:0.2rem;
+    }
+</style>
+<body>
+    <p class="edit_msg">Edit your messages:&nbsp;<p> <%# chat._id %></p>
+    <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+        <p>The chat was send  from: <br> <b><%= chat.from %></b> to: <b><%= chat.to %></b></p>
+        <textarea name="msg" id="" ><%= chat.msg %></textarea><br>
+        <button class="edit_btn" type="submit">Edit</button>
+    </form>
+
+    
+</body>
+</html>

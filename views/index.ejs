@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp</title>
+    <link rel="icon" href="https://i.pinimg.com/736x/6c/78/49/6c784972cbf5806215d46fbda8b0c46a.jpg">
+    <!-- linking stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- <h1>Whatsapp-Chats</h1> -->
+    <img  class="tit-img" src="https://i.pinimg.com/736x/6c/78/49/6c784972cbf5806215d46fbda8b0c46a.jpg" alt="Whatsapp...">
+    <h1 class="initial_msg">lets have some ChiT ChaT...</h1>
+    <% for(let chat of chats){%>
+        <div class="allchat">
+            
+            <p class="sender"> <%= chat.from %></p>
+            <div class="chat">
+                <div class="msg-func">
+                    <div class="msg">
+                        <p><%= chat.msg %></p>
+                    </div>
+                    <div class="btns">
+                        <form action="/chats/<%= chat._id %>/edit">
+                            <button class="Edit_btn bt"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </form>
+                        <form action="/chats/<%= chat.id %>?_method=Delete" method="POST">
+                            <button class="Delete_btn bt"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                    <div class="time">
+                        <p class="time">At:<%= chat.created_at.toString().split(" ")[4] %></p>
+                        <p class="day_date">On:<%= chat.created_at.toString().split(" ").slice(1,4).join("-") %></p>
+                    </div>
+                    <!-- <p class="time">At:<%= chat.created_at.toString().split(" ")[4] %></p>
+                    <p class="day_date">On:<%= chat.created_at.toString().split(" ").slice(1,4).join("-") %></p> -->
+                    
+                </div>
+        
+                </div>
+            <p class="receiver"><%= chat.to %></p>
+            <!-- <form action="/chats/:id/edit"> -->
+                    <!-- <button class="Edit_btn">Edit</button> -->
+                <!-- </form> -->
+                
+            </div>
+            <% } %>
+        </div>
+        <div class="chat_opt">
+            <form action="/chats/new" method="get">
+                <button class="newChatBtn">New Chat!</button>
+            </form>
+
+        </div>
+        <Script src="script.js"></Script>
+    </body>
+    </html>

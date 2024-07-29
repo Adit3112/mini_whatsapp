@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    outline:none;
+    box-sizing: border-box;
+    overflow:none;
+
+}
+.tit-img{
+    position:fixed !important;
+    top:1rem;
+    left:45%;
+    opacity:10;
+    margin-bottom:2rem;
+
+    /* background:black !important; */
+    height:5rem !important;
+    width:8rem !important;
+    margin: 5rem auto;
+}
+body{
+    overflow-x: hidden;
+    /* margin:0 50%; */
+    height:100vh;
+    width:100vw;
+    display:flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    background-image:url(https://i.redd.it/3jfjc53fsyb61.jpg);
+    background-size: cover;
+}
+.initial_msg{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    position: relative;
+    opacity: 0;
+    animation: move-text 4s forwards  ease-in-out;
+    /* animation: move-text 3s linear 2s infinite forwards forwards forwards; */
+    /* animation-name: initial_msg;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function:ease-out; */
+}
+/* The animation code1 */
+@keyframes initial_msg {
+    from {
+        color: #fff;
+    }
+
+    to {
+        color: #65be8557;
+        font-size: 3rem;
+    }
+}
+/* The annimation code2 */
+@keyframes move-text {
+    0% {
+        bottom: -1em;
+        opacity: 0;
+    }
+
+    50% {
+        bottom: 1em;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 1;
+        color:#25d366;
+        font-size: 3rem;
+    }
+}
+
+
+.sender,.receiver{
+    height:50px;
+    width:50px;
+    color:#fff;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.sender{
+    background: #fff;
+    color:#000;
+    position: fixed;
+    left: 0;
+}
+.receiver{
+    background:#25d366;
+    position:fixed;
+    right:0;
+}
+/* all chat section */
+/* .allchat {
+    background: red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* chatting section */
+.chat {
+    overflow:none;
+    margin:0 auto;
+    padding:1rem;
+    max-width:60%;
+    border-radius:10%;
+    /* border: 1px solid black; */
+    /* background:transparent; */
+    /* background:linear-gradient(90deg,peru,rgb(242, 178, 178)); */
+    background:linear-gradient(90deg,#25d366,#fff);
+    /* margin:0.5rem 1rem; */
+    /* margin:0 50%; */
+
+}
+/* message section */
+.msg {
+    /* margin:0 40%; */
+    max-width:80%;
+    border:1px solid black;
+    background: cornsilk;
+    display:inline-flex;
+    padding: 10px;
+    /* background: green; */
+    align-items: center;
+    /* margin: 10px; */
+    border-radius: 1.5rem;
+    font-weight: 600;
+    flex:1;
+}
+button{
+    margin:1rem;
+    padding:0.2rem;
+}
+
+.time,.day_date{
+    text-align: right;
+}
+.Edit_btn,.Delete_btn{
+    display:inline;
+    background: #000;
+    color:#fff;
+    /* padding:0.2rem 0.5rem; */
+    margin:1rem;
+    
+}
+/* .Delete_btn{
+    margin:0;
+} */
+.msg-func{
+    margin:0 5rem ;
+    width:70%;
+    display:inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.btns{
+    height:4rem;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.bt{
+    background: transparent;
+    border:none;
+    margin:0;
+
+}
+i{
+    
+    color:#000;
+    font-size: 1rem;
+}
+
+.time{
+    width:10rem;
+    background: red;
+    margin-left:5rem;
+    display:none;
+}
+.time:hover{
+    display:contents;
+}
+.chat_opt{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    bottom:0;
+    opacity:10;
+    height:5rem;
+    width:100vw;
+    background-image: url(https://i.redd.it/3jfjc53fsyb61.jpg);
+    background-size: cover;
+}
+
+.newChatBtn{
+    width:20rem;
+    bottom:0.5rem;
+    left:35%;
+    padding:1rem;
+    background: #25d366;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* edit page */

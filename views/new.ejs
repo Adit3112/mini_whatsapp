@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New chat</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <STYLE>
+        *{
+            font-size: 1rem;
+            font-weight: 600;
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+            transition:0.3s;
+
+        }
+        body{
+            background-image: url(https://i.redd.it/3jfjc53fsyb61.jpg);
+            background-size: cover;
+            height:100vh;
+            width:100vw;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input::placeholder{
+            color:#000;
+        }
+      
+        .newChat{
+            background: linear-gradient(90deg,#25d366,#fff);
+            max-width:70%;
+            height:15%;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            border-radius:0.5rem;
+        }
+        form{
+            width:90%;
+            display:flex;
+        }
+        form textarea{
+            cursor:pointer;
+            outline:none;
+            padding:1rem;
+            width:100%;
+            border-radius:2rem;
+
+        }
+        .sender{
+            cursor:pointer;
+            height:4.5rem;
+            width:4.5rem;
+            border-radius:50%;
+            background-color: #25d366;
+            color:#000;
+            margin:0.5rem;
+            padding:1rem;
+            border:none;
+            outline-style:solid;
+            outline-color: #000;
+            outline-width: 2px;
+        }
+        .receiver{
+            cursor:pointer;
+            padding:1rem;
+            margin:0.5rem;
+            outline:none;
+            height:4.5rem;
+            width:4.5rem;
+            border-radius:50%;
+            background-color: #fff;
+            color:#000;
+            border:none;
+
+        }
+        button{
+            display:block;
+            border:none;
+            background-color: transparent;
+        }
+        button i{
+            display:block;
+            cursor:pointer;
+            outline: none;
+            padding:0.5rem;
+            font-size:2rem;
+            border:none;
+            animation:move-plane 3s linear ;
+        }
+        @keyframes move-plane{
+            0%{
+
+                transform: skew(45deg);
+            }
+            50%{
+                transform-style: flat;
+                transform: translateY(-10rem) translateX(10rem)
+            }
+            60%{
+                opacity:0;
+            }
+            80%{
+                transform:translateY(-10rem) translateX(-10rem);
+            }
+            90%{
+                transform:skewY(45deg)
+            }
+
+
+        }
+
+    </STYLE>
+</head>
+<body>
+    <div class="newChat">
+        <form action="/chats" method="post">
+            <input  class="sender" type="text" name="from" placeholder="from:"><br>
+            <textarea name="msg" id="" placeholder="Enter  your message..."></textarea><br>
+            <input class="receiver" type="text" name="to" placeholder="To:"><br>
+            <button>
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
